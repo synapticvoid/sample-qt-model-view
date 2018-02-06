@@ -11,6 +11,7 @@ class CountryModel : public QAbstractListModel
     Q_OBJECT
 public:
     CountryModel(QObject* parent = 0);
+    ~CountryModel();
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     QVariant data(const QModelIndex& index, int role) const override;

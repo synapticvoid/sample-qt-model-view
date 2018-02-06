@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     countryModel()
 {
     ui->setupUi(this);
+    setWindowTitle("Model / View sample - countries");
+
     ui->countryListView->setModel(&countryModel);
 }
 
