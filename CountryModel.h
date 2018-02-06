@@ -10,6 +10,11 @@ class CountryModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
+
+    enum CountryRoles {
+        CapitalRole = Qt::UserRole,
+    };
+
     CountryModel(QObject* parent = 0);
     ~CountryModel();
 

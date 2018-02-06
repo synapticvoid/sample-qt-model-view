@@ -35,6 +35,9 @@ QVariant CountryModel::data(const QModelIndex& index, int role) const
     case Qt::DecorationRole:
         return QIcon(country.flagIcon);
 
+    case CountryRoles::CapitalRole:
+        return country.capital;
+
     default:
         return QVariant();
         break;

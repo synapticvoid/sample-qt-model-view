@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QItemSelection>
 
 #include "CountryModel.h"
 
@@ -16,6 +17,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+private slots:
+    void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
+
+private:
+    void updateCountryDetails(const QModelIndex& index);
 
 private:
     Ui::MainWindow *ui;
