@@ -25,18 +25,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
 {
-    Q_UNUSED(selected)
     Q_UNUSED(deselected)
 
-    const QModelIndex index = ui->countryListView->selectionModel()->currentIndex();
-    updateCountryDetails(index);
-}
+    QModelIndexList list = selected.indexes();
+    const QModelIndex& index = list.first();
 
-void MainWindow::updateCountryDetails(const QModelIndex& index)
-{
     QString countryName = index.data(Qt::DisplayRole).toString();
     ui->countryNameLabel->setText(countryName);
 
     QString countryCapital = index.data(CountryModel::CapitalRole).toString();
     ui->countryCapitalLabel->setText(countryCapital);
+
 }
